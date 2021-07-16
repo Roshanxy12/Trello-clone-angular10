@@ -28,10 +28,7 @@ export class EditTalkComponent implements OnInit {
     const talk = this.data && this.data.talk ? this.data.talk : null;
     this.formGroup = this.formBuilder.group({
       text: [talk && talk.text ? talk.text : '', Validators.required],
-      speaker: [talk && talk.speaker ? talk.speaker : '', Validators.required],
-      image: [talk && talk.image ? talk.image : ''],
-      tags: [talk && talk.tags ? talk.tags : []],
-      issueType: [talk && talk.issueType ? talk.issueType : ''],
+      desc: [talk && talk.desc ? talk.desc : '', Validators.required],
       createdAt: [talk && talk.createdAt ? talk.createdAt : new Date()]
     });
   }
@@ -49,8 +46,7 @@ export class EditTalkComponent implements OnInit {
   addTag(event: MatChipInputEvent) {
     const tagsControl = this.formGroup.get('tags');
 
-    // Create a new array of tags, if the talk doesn't have any,
-    // otherwise add the new tag to the existing array.
+   
     if (tagsControl.value) {
       tagsControl.value.push({name: event.value, color: '#e0e0e0'});
     } else {

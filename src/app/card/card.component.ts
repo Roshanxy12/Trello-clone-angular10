@@ -19,7 +19,7 @@ export class CardComponent implements OnInit {
   @Input() image: string;
   @Input() issueType?: string;
   @Input() createdAt: Date;
-
+@Input() description: string;
   constructor() { }
 
   ngOnInit() {

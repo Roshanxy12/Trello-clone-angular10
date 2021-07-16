@@ -13,8 +13,134 @@ import { Board, Talk, Track } from './shared/models/schema.model';
 })
 export class AppComponent {
   boards: Board[] = [];
+  boarddata=
+  [
+    {
+      "title": "Day one",
+      "tracks": [
+        {
+          "id": "track-one",
+          "title": "Track one",
+          "talks": [
+            {
+              "issueType": "epic",
+              "text": "Keynote addess",
+              
+  
+              "desc": "Igor Minar",
+              "createdAt": "2018-01-01T09:26:05.026Z"          },
+          
+            
+         
+          
+           
+          ]
+        },
+        {
+          "id": "track-two",
+          "title": "Track two",
+          "talks": [
+            {
+              "issueType": "epic",
+              "text": "Keynote addess",
+              
+  
+              "desc": "Igor Minar",
+              "createdAt": "2018-01-01T09:26:05.026Z"          },
+            {
+              "issueType": "bug",
+              "text": "VS Code Can Do That",
+              "speaker": "John Papa",
+              "createdAt": "2020-02-01T09:26:05.026Z"
+           
+            },
+            {
+              "issueType": "sub-task",
+              "text": "How to save time & money by planning your ngUpgrade",
+              "speaker": "Sam Julien",
+              "desc": "Igor Minar",
+  
+              "createdAt": "2019-03-01T09:26:05.026Z"
+            },
+            {
+              "issueType": "task",
+              "text": "How to AI in JS?",
+              "desc": "Igor Minar",
+  
+              "speaker": "Asim Hussain",
+              "createdAt": "2020-04-01T09:26:05.026Z",
+              "tags": [
+                {
+                  "name": "Intro",
+                  "color": "#e0e0e0"
+                }
+              ]
+            },
+            {
+              "issueType": "story",
+              "text": "You Might Not Need NgRx",
+              "desc": "Igor Minar",
+  
+              "speaker": "Michael Ryan",
+              "createdAt": "2020-05-01T09:26:05.026Z"
+            },
+            {
+              "issueType": "story",
+              "text": "Upgrading to Angular without ngUpgrade",
+              "speaker": "Erin Coughlan",
+              "desc": "Igor Minar",
+  
+              "createdAt": "2020-06-01T09:26:05.026Z"
+            },
+            {
+              "issueType": "task",
+              "text": "Why you need a build system, and why it should be Bazel",
+              "speaker": "Martin Probst",
+              "desc": "Igor Minar",
+  
+              "createdAt": "2020-07-01T09:26:05.026Z"
+            },
+            {
+              "issueType": "task",
+              "desc": "Igor Minar",
+  
+              "text": "The theory of Angular Ivy",
+              "speaker": "Alex Rickabaugh",
+              "createdAt": "2020-08-01T09:26:05.026Z"
+            },
+            {
+              "issueType": "task",
+              "text": "Building an Angular PWA: Angular Service Worker or Workbox?",
+              "speaker": "Maxim Salnikov",
+              "createdAt": "2020-09-01T09:26:05.026Z",
+              "desc": "Igor Minar",
+  
+              "tags": [
+                {
+                  "name": "Deep-dive",
+                  "color": "#e0e0e0"
+                }
+              ]
+            },
+            {
+              "issueType": "task",
+              "text": "Angular Unit Testing - how to win friends, design better code, and get rich quick!",
+              "speaker": "Shai Reznik",
+              "desc": "Igor Minar",
+  
+              "createdAt": "2020-10-01T09:26:05.026Z"
+            }
+          ]
+        }
+      
+      ]
+    }
+  ]
   constructor(private _boardService: BoardService, private _dialog: MatDialog) {
-    this.boards = this._boardService.getBoards();
+    localStorage.setItem('data',JSON.stringify(this.boarddata))
+    setTimeout( ()=>{
+      this.boards = this._boardService.getBoards();
+    }, 1000)
   }
 
   /**

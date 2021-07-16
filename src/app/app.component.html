@@ -31,7 +31,7 @@
       <div *ngIf="!track['collapsed']" class="card-list-content" cdkDropList [id]="track.id" [cdkDropListData]="track.talks"
         [cdkDropListConnectedTo]="trackIds(boardIndex)" (cdkDropListDropped)="onTalkDrop($event)">
 
-        <app-card *ngFor="let talk of track.talks" [text]="talk.text" [createdAt]="talk?.createdAt" [tags]="talk.tags" [issueType]="talk?.issueType" [author]="talk.speaker"
+        <app-card *ngFor="let talk of track.talks" [text]="talk.text" [description]="talk.desc" [createdAt]="talk?.createdAt" [tags]="talk.tags" [issueType]="talk?.issueType" [author]="talk.desc"
           [image]="talk.image" cdkDrag (edit)="addEditTalk(talk, track, true)" (delete)="deleteTalk(talk, track)"></app-card>
 
       </div>
