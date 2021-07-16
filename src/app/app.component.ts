@@ -51,7 +51,9 @@ export class AppComponent {
               "issueType": "bug",
               "text": "VS Code Can Do That",
               "speaker": "John Papa",
-              "createdAt": "2020-02-01T09:26:05.026Z"
+              "createdAt": "2020-02-01T09:26:05.026Z",
+              "desc": "Igor Minar",
+
            
             },
             {
@@ -175,7 +177,11 @@ export class AppComponent {
     // the specified talk.
     this._dialog.open(EditTalkComponent, {data: {talk, edit}, width: '500px'})
       .afterClosed()
-      .subscribe(newTalkData => edit ? Object.assign(talk, newTalkData) : track.talks.unshift(newTalkData));
+      .subscribe(newTalkData => edit ? Object.assign(talk, newTalkData) :      track.talks.unshift(newTalkData) 
+      
+         );
+    console.log(track,'#@@@@@@@@@@@@@@@@')
+    console.log(this.boarddata)
   }
 
   deleteTalk(talk: Talk, track: Track) {

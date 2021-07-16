@@ -55,6 +55,7 @@ export class EditTalkComponent implements OnInit {
 
     // Clear the input's value once the tag has been added.
     event.input.value = '';
+
   }
 
   openColorPickerDialog(tag): void {
@@ -65,7 +66,7 @@ export class EditTalkComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      console.log(result,'dcsvdvds');
       if (result) {
         tag.color = result;
       }
